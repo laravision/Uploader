@@ -1,0 +1,14 @@
+{
+    "name": "laravision/visiteur",
+    "description": "Analayse visiteurs system",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "marwenhlaoui",
+            "email": "marwenhlaoui@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
