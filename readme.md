@@ -1,13 +1,13 @@
-# Laravision Crud system
+# Laravision visiteur system
 
-[![Version](https://img.shields.io/packagist/v/laravision/crud.svg)](https://packagist.org/packages/laravision/crud)
-[![License](https://poser.pugx.org/laravision/crud/license.svg)](https://packagist.org/packages/laravision/crud)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravision/crud.svg)](https://packagist.org/packages/laravision/crud)
+[![Version](https://img.shields.io/packagist/v/laravision/visiteur.svg)](https://packagist.org/packages/laravision/visiteur)
+[![License](https://poser.pugx.org/laravision/visiteur/license.svg)](https://packagist.org/packages/laravision/visiteur)
+[![Total Downloads](https://img.shields.io/packagist/dt/laravision/visiteur.svg)](https://packagist.org/packages/laravision/visiteur)
 
 
 This package expects that you are using Laravel 5.1 or above.
 
-[![Laravision Crud](https://s25.postimg.org/3vy0o6g0v/crud1.png)](https://github.com/laravision/crud/)
+[![Laravision Crud](https://s25.postimg.org/tn2hf59r3/visiteur.png)](https://github.com/laravision/crud/)
 
 ## Install
 
