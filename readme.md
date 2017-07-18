@@ -1,22 +1,22 @@
-# Laravision visiteur system
+# Laravision Uploader
 
-[![Version](https://img.shields.io/packagist/v/laravision/visiteur.svg)](https://packagist.org/packages/laravision/visiteur)
-[![License](https://poser.pugx.org/laravision/visiteur/license.svg)](https://packagist.org/packages/laravision/visiteur)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravision/visiteur.svg)](https://packagist.org/packages/laravision/visiteur)
+[![Version](https://img.shields.io/packagist/v/laravision/uploader.svg)](https://packagist.org/packages/laravision/uploader)
+[![License](https://poser.pugx.org/laravision/uploader/license.svg)](https://packagist.org/packages/laravision/uploader)
+[![Total Downloads](https://img.shields.io/packagist/dt/laravision/uploader.svg)](https://packagist.org/packages/laravision/uploader)
 
 
 This package expects that you are using Laravel 5.1 or above.
 
-[![Laravision Crud](https://s25.postimg.org/tn2hf59r3/visiteur.png)](https://github.com/laravision/crud/)
+[![Laravision Uploader](https://s25.postimg.org/5zk44axb3/uploader.png))](https://github.com/laravision/Uploader)
 
 ## Install
 
-In order to install Laravel 5 Laravision Visiteur :
+In order to install Laravel 5 Laravision Uploader :
 
-1) You will need to import the laravision/visiteur package via composer:
+1) You will need to import the laravision/uploader package via composer:
 
 ```shell
-composer require laravision/visiteur
+composer require laravision/uploader
 ```
 2) Add the service provider to your `config/app.php` file within the `providers` key:
 
@@ -27,7 +27,7 @@ composer require laravision/visiteur
      * Package Service Providers...
      */
 
-    Laravision\Crud\VisiteurServiceProvider::class,
+    Laravision\Uploader\UploaderServiceProvider::class,
 ],
 // ...
 ```
@@ -41,7 +41,7 @@ composer require laravision/visiteur
     /*
      * Package Class Aliases...
      */
-        'Visiteur' => Laravision\Visiteur\VisiteurFacade::class,
+        'Uploader' => Laravision\Uploader\UploaderFacade::class,
 
     ],
 // ...
@@ -49,10 +49,16 @@ composer require laravision/visiteur
 
 ## Usage
 
-- Run the script in your middleware : 
+- Upload file named picture : 
 
 ```php
-Visiteur::run();
+	public function store(Request $img){   
+		//...
+		
+		$uploader = Uploader::run($img->file('picture')); 
+		
+		//...
+	}
 ```
 
 

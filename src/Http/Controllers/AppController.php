@@ -20,6 +20,7 @@ class AppController extends Controller
 	public function storePicture(Request $img){   
 
 		$uploader = Uploader::run($img->file('picture')); 
+		
 		return redirect()->back();
 	}
 }
