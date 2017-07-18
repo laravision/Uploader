@@ -1,6 +1,6 @@
 {
-    "name": "laravision/visiteur",
-    "description": "Analayse visiteurs system",
+    "name": "laravision/uploader",
+    "description": "Uploader files system",
     "type": "library",
     "license": "MIT",
     "authors": [

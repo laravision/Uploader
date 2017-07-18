@@ -1,34 +1,15 @@
-@extends('Laravision-visiteur::layout')
+@extends('Laravision-uploader::layout')
 
 @section('content')
 	
-	<div class="col-md-12">
-		<h1>Hello in laravision visiteur dashboard</h1><hr>
-	</div>
-	<div class="col-xs-4">
-		<div class="alert alert-dismissible alert-warning" > 
-		  <h2> <b  class="ion ion-ios-eye pull-left" style="font-size: 2em;padding: 0px 10% 0 10%;"></b> &nbsp; {{count($data)}}</h2>
-		  <h4>Count of visiteurs</h4>
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="text-muted">Uploader laravision package for laravel 5 framework</h1>
 		</div>
-	</div> 
-	<div class="col-xs-4">
-		<div class="alert alert-dismissible alert-success" > 
-		  <h2> <b  class="ion ion-ios-eye pull-left" style="font-size: 2em;padding: 0px 10% 0 10%;"></b> &nbsp; 5047</h2>
-		  <h4>Count of visiteurs</h4>
-		</div>
-	</div> 
-	<div class="col-xs-4">
-		<div class="alert alert-dismissible alert-info" > 
-		  <h2> <b  class="ion ion-ios-eye pull-left" style="font-size: 2em;padding: 0px 10% 0 10%;"></b> &nbsp; 5047</h2>
-		  <h4>Count of visiteurs</h4>
-		</div>
-	</div> 
-
-	<div class="col-md-7">
-		{{dump($data)}}
-	</div>
-	<div class="col-md-5">
-		@include('Laravision-visiteur::_plugins.activity')
+		<a href="{{route('uploader.picture')}}" class="col-md-3 care">
+			<i class="ion ion-image"></i>
+			<span>Upload Picture</span>
+		</a>
 	</div>
 
 @stop

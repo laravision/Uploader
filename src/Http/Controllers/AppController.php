@@ -1,16 +1,25 @@
 <?php
 
-namespace Laravision\Visiteur\Http\Controllers;
+namespace Laravision\Uploader\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Laravision\Visiteur\Visiteur;
+use Laravision\Uploader\Uploader;
 use Illuminate\Http\Request;
 
 class AppController extends Controller 
 {
 
-	public function index(Request $req){  
-		$data = Visiteur::all();  
-		return view('Laravision-visiteur::dashboard',compact('data'));
+	public function index(){  
+		return view('Laravision-uploader::dashboard');
+	}
+
+	public function picture(){  
+		return view('Laravision-uploader::upload.picture');
+	}
+
+	public function storePicture(Request $img){   
+
+		$uploader = Uploader::run($img->file('picture')); 
+		return redirect()->back();
 	}
 }

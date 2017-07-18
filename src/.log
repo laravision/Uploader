@@ -1,12 +1,4 @@
 provider and facade
 publish migration & model 
-php artisan vendor:publish --provider="Laravision\Visiteur\VisiteurServiceProvider" --force
-
-count all real visiteurs
-activity by ip
-
-activity by country
-
-% by browser
-% by os
-
+php artisan vendor:publish --provider="Laravision\Uploader\UploaderServiceProvider" --force
+php artisan migrate:refresh 

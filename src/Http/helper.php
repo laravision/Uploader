@@ -1,33 +1,4 @@
-<?php
-
-/*
-*	get country data from IPDB
-*/
-
-
-if (!function_exists('countryData')) {
-	
-	function countryData($el,$d,$r){
-		/*
-			$el = element findet
-			$d  = data like $el 
-			$r  = result item
-		*/
-
-		$countryDB = json_decode(file_get_contents(root.'/database/IPDB/country.json')); 
- 	 	$data = "";
-
- 	 	foreach ($countryDB as $key => $value) {
- 	 		if ($value->$el == $d) {
- 	 			$data = $value->$r;
- 	 		}
- 	 	}
-
- 	 	return $data;
-
-	}
-
-}
+<?php 
 
 /*
 *	compare 2 array data key by key
@@ -52,31 +23,33 @@ if (!function_exists('isDiff')) {
 
 	}
 
-}
+} 
 
 /*
-*	get web page title
+*	convert rules to array
 */
 
 
-if (!function_exists('pageTitle')) {
+if (!function_exists('RulesArray')) {
 	
-	function pageTitle($page_url){  
-		
-		$pg = $page_url;
-	    if (!empty($page_url)) {
-	    	$read_page=file_get_contents($page_url,true);
-		    preg_match("/<title.*?>[\n\r\s]*(.*)[\n\r\s]*<\/title>/", $read_page, $page_title);
-		    if (isset($page_title[1])){
-				if ($page_title[1] == ''){
-		            return $page_url;
-		        }
-		        $page_title = $page_title[1];
-		        return trim($page_title);
-		    } 
-	    }
-	    return $pg;
+	function RulesArray($rules){ 
+		$data = [];
+		$rules = explode('|', $rules);
+		foreach ($rules as $key => $rule) {
+			$r = explode(':', $rule);
+			if (!empty($r[1])) {
+				$op = explode(',', $r[1]);
+				if (!empty($op[1])) {
+					$data[$r[0]] = $op;
+				}else{
+					$data[$r[0]] = $r[1];
+				}
+			}else{
+				$data[$r[0]] = true;
+			}
+		}
+		return $data;
 
 	}
 
-}
+} 
